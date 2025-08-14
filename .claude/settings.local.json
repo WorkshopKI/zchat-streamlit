@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:nicedouble-streamlitantdcomponentsdemo-app-middmy.streamlit.app)",
+      "Bash(pip show:*)",
+      "Bash(streamlit cache:*)",
+      "Bash(pkill:*)",
+      "Bash(fuser:*)"
+    ],
+    "deny": []
+  }
+}

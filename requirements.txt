@@ -1,0 +1,64 @@
+# ChatBot v1.0 - Python Dependencies
+# ===================================
+
+# Core framework
+streamlit>=1.28.0
+
+# HTTP requests for AI providers
+requests>=2.28.0
+
+# Modern UI components with Ant Design
+streamlit-antd-components>=0.3.0
+
+# Document processing libraries
+# PDF processing with OCR capability
+PyPDF2>=3.0.0
+pymupdf>=1.23.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+pdf2image>=1.16.0
+
+# Office document processing
+python-docx>=0.8.11
+openpyxl>=3.1.0
+python-pptx>=0.6.21
+
+# Rich text and publishing formats
+striprtf>=0.0.26
+odfpy>=1.4.1
+ebooklib>=0.18
+
+# Web and markup processing
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Email processing
+extract-msg>=0.41.0
+email-reply-parser>=0.5.12
+
+# Archive processing
+py7zr>=0.20.0
+rarfile>=4.0
+zipfile38>=0.0.3
+
+# Data processing and analysis
+pandas>=2.0.0
+chardet>=5.0.0
+
+# Configuration and specialized formats
+pyyaml>=6.0
+configparser>=5.3.0
+icalendar>=5.0.0
+vobject>=0.9.6
+
+# Scientific formats
+pylatexenc>=2.10
+
+# Image processing (additional formats)
+opencv-python-headless>=4.8.0
+
+# Notes:
+# - SQLite is included with Python standard library
+# - Tesseract OCR engine needs to be installed separately on the system
+# - For OCR: sudo apt-get install tesseract-ocr (Linux) or brew install tesseract (Mac)
+# - For RAR support: may need unrar utility installed on system

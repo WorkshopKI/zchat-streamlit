@@ -1,0 +1,9 @@
+{
+  "app": {
+    "theme": "light"
+  },
+  "llm_providers": {
+    "default_provider": "lm_studio",
+    "providers": {}
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "app": {
+    "title": "ChatBot v1.0",
+    "description": "LLM Chat Application with Projects and Knowledge Base",
+    "version": "1.0.0",
+    "theme": "light",
+    "port": 8501,
+    "debug": false,
+    "force_light_theme": true
+  },
+  "ui": {
+    "sidebar_expanded": true,
+    "layout": "wide",
+    "show_progress_bar": true,
+    "chat_avatar_system": "chat-logo-system.png",
+    "chat_avatar_user": "chat-logo-user.png",
+    "max_chat_history_display": 50,
+    "enable_markdown": true,
+    "enable_code_highlighting": true
+  },
+  "storage": {
+    "type": "local",
+    "auto_save": true,
+    "backup_enabled": true,
+    "max_projects": 50,
+    "max_messages_per_project": 1000
+  },
+  "file_upload": {
+    "max_file_size_mb": 50,
+    "allowed_extensions": [
+      "pdf",
+      "docx",
+      "xlsx",
+      "pptx",
+      "txt",
+      "md",
+      "csv",
+      "json"
+    ],
+    "max_files_per_project": 50,
+    "auto_process": true,
+    "extract_text": true
+  },
+  "llm_providers": {
+    "default_provider": "lm_studio",
+    "providers": {
+      "lm_studio": {
+        "name": "LM Studio",
+        "type": "local",
+        "enabled": true,
+        "settings": {
+          "base_url": "http://172.23.0.1:1234",
+          "api_key": "",
+          "model_name": "hermes-3-llama-3.1-8b",
+          "api_version": "v1",
+          "timeout": 30,
+          "max_retries": 3,
+          "stream": true,
+          "available_models": [
+            "google/gemma-3-4b",
+            "google/gemma-3n-e4b",
+            "google/gemma-3-12b",
+            "text-embedding-nomic-embed-text-v1.5",
+            "deephermes-3-llama-3-8b-preview",
+            "gemma-3-27b-it@q3_k_l",
+            "gemma-3-27b-it@q4_k_m",
+            "gemma-3-27b-it@q6_k",
+            "gemma-3-12b-it",
+            "granite-3.1-8b-instruct",
+            "granite-3.2-8b-instruct",
+            "olmo-2-1124-13b-instruct-rlvr2",
+            "llama-3.1-tulu-3-8b",
+            "hermes-3-llama-3.1-8b",
+            "deepseek-r1-distill-llama-8b",
+            "phi-4",
+            "mixtral-8x7b-instruct-v0.1@q2_k",
+            "mixtral-8x7b-instruct-v0.1@q5_k_m"
+          ],
+          "parameters": {
+            "temperature": 0.7,
+            "max_tokens": 2000,
+            "top_p": 0.9,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "stop": null
+          }
+        }
+      },
+      "openrouter": {
+        "name": "OpenRouter",
+        "type": "cloud",
+        "enabled": true,
+        "settings": {
+          "base_url": "https://openrouter.ai/api/v1",
+          "api_key": "",
+          "model_name": "anthropic/claude-3.5-sonnet",
+          "timeout": 60,
+          "max_retries": 3,
+          "stream": true,
+          "headers": {
+            "HTTP-Referer": "https://github.com/chatbot-v1",
+            "X-Title": "ChatBot v1.0"
+          },
+          "parameters": {
+            "temperature": 0.7,
+            "max_tokens": 2000,
+            "top_p": 0.9,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "stop": null
+          },
+          "available_models": [
+            "anthropic/claude-3.5-sonnet",
+            "anthropic/claude-3-haiku",
+            "openai/gpt-4",
+            "openai/gpt-4-turbo",
+            "openai/gpt-3.5-turbo",
+            "meta-llama/llama-3.1-8b-instruct",
+            "meta-llama/llama-3.1-70b-instruct",
+            "microsoft/wizardlm-2-8x22b",
+            "google/gemini-pro",
+            "google/gemini-pro-vision",
+            "mistralai/mistral-7b-instruct",
+            "mistralai/mixtral-8x7b-instruct"
+          ]
+        }
+      },
+      "ollama": {
+        "name": "Ollama",
+        "type": "local",
+        "enabled": false,
+        "settings": {
+          "base_url": "http://localhost:11434",
+          "api_key": "",
+          "model_name": "llama3.1",
+          "timeout": 30,
+          "max_retries": 3,
+          "stream": true,
+          "parameters": {
+            "temperature": 0.7,
+            "num_predict": 2000,
+            "top_p": 0.9,
+            "repeat_penalty": 1.1,
+            "stop": null
+          }
+        }
+      },
+      "azure_openai": {
+        "name": "Azure OpenAI",
+        "type": "cloud",
+        "enabled": false,
+        "settings": {
+          "base_url": "",
+          "api_key": "",
+          "api_version": "2024-02-01",
+          "deployment_name": "",
+          "timeout": 60,
+          "max_retries": 3,
+          "stream": true,
+          "parameters": {
+            "temperature": 0.7,
+            "max_tokens": 2000,
+            "top_p": 0.9,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "stop": null
+          }
+        }
+      }
+    }
+  },
+  "features": {
+    "chat": {
+      "enable_streaming": true,
+      "enable_typing_indicator": true,
+      "auto_scroll": true,
+      "enable_copy_messages": true,
+      "enable_message_search": true,
+      "enable_message_export": true
+    },
+    "documents": {
+      "enable_preview": true,
+      "enable_full_text_search": true,
+      "auto_extract_metadata": true,
+      "enable_document_chat": true,
+      "chunk_size": 1000,
+      "chunk_overlap": 200,
+      "enable_embeddings": false
+    },
+    "projects": {
+      "enable_project_templates": true,
+      "enable_project_sharing": false,
+      "enable_project_export": true,
+      "enable_project_import": true,
+      "auto_backup": true
+    },
+    "ai_features": {
+      "enable_context_aware_responses": true,
+      "enable_document_summarization": true,
+      "enable_auto_suggestions": false,
+      "enable_conversation_analysis": false,
+      "max_context_length": 8000
+    }
+  },
+  "performance": {
+    "cache_enabled": true,
+    "cache_ttl_seconds": 3600,
+    "max_concurrent_requests": 5,
+    "request_timeout": 60,
+    "enable_compression": true,
+    "lazy_loading": true
+  },
+  "security": {
+    "enable_input_validation": true,
+    "max_input_length": 10000,
+    "allowed_file_types": [
+      "text",
+      "application"
+    ],
+    "scan_uploads": false,
+    "log_user_actions": false,
+    "enable_rate_limiting": false
+  },
+  "logging": {
+    "level": "INFO",
+    "enable_file_logging": false,
+    "log_file": "chatbot.log",
+    "max_log_size_mb": 10,
+    "backup_count": 5,
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}
